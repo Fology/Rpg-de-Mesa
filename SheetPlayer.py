@@ -1,21 +1,28 @@
 class Ficha:
-    def __init__(self, nome_personagem, nome_jogador, classe, raca, subclasse="NoN"):
-        self.nome_personagem = nome_personagem
-        self.nome_jogador = nome_jogador
+    def __init__(self, name_person, name_player, classe, race):
+        self.name_person = name_person
+        self.name_player = name_player
         self.classe = classe
-        self.raca = raca
-        self.subclasse = subclasse
+        self.race = race
+        self.experience = 0
+        self.level = 1
 
-    def mostra(self):
-        a = (f'O nome do player é {self.nome_jogador} e seu personagem é o/a {self.nome_personagem} da raça {self.raca}.'
-                f'\nEle é da classe {self.classe} ')
-        if self.subclasse != "NoN":
-            b = (f'e subclasse {self.subclasse}')
-            print(a + b)
-        else:
-            print(a)
+    def xp_gained(self, xp):
+        self.experience += xp
+        self.lim_exp = 800
+        if self.experience >= self.lim_exp:
+            self.level += 1
+            self.lim_exp *= 1.5
 
+    def status(self, mod_class=0):
+        self.life = 100 * mod_class
+        self.mana = 100 * mod_class
+        self.strength = 10 + mod_class
+        self.dexterity = 10 + mod_class
+        self.constitution = 10 + mod_class
+        self.intelligence = 10 + mod_class
+        self.race_spell = mod_class
+        self.race_effect = mod_class
 
-fology = Ficha('Fology', 'Gabriel', 'Ladino', "Elfo", "Guerreiro")
-
-fology.mostra()
+    def Equipments(self):
+        pass
