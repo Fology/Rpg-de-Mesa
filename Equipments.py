@@ -4,10 +4,10 @@ class Equipment():
                      "(Weapon) name, damage, weigth, cost, upgrade(if there is) \n"
                      "(Armor) piece, name, damage, weigth, cost, upgrade(if there is)")
 
-    def Weapon(self, name, damage, weigth, cost, upgrades=None):
+    def Weapon(self,name ,tipe ,damage, weigth, cost, upgrades=None):
         pass
 
-    def Armor(self, piece, name, defense, weigth, cost, upgrade=None):
+    def Armor(self, piece, tipe, name, defense, weigth, cost, upgrade=None):
         pass
 
     def Iten(self, name, use):
